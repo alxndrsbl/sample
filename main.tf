@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-2"
+    region = "us-east-2"
 
 #AWS Instance
 resource "aws_instance" "example" {
@@ -12,7 +12,7 @@ resource "aws_instance" "example" {
   }
 }
 
-#AMI Filter for Windows Server 2019 Base
+#AMI Details of EC2
 data "aws_ami" "rhel" {
   most_recent = true
 
