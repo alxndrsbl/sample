@@ -12,3 +12,4 @@ resource "aws_instance" "example" {
   lifecycle {
     ignore_changes = [ami]
   }
+}
