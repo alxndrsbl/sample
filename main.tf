@@ -13,3 +13,7 @@ resource "aws_instance" "example" {
   }
 }
 
+#Key Pair
+resource "aws_key_pair" "example" {
+  key_name   = "rhelsample"
+}
