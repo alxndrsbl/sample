@@ -13,32 +13,3 @@ resource "aws_instance" "example" {
   }
 }
 
-#AMI Details of EC2
-data "aws_ami" "rhel" {
-  most_recent = true
-
-  filter {
-    name   = "name"
-    values = ["RHEL-8.4.0_HVM-20210504-x86_64-2-Hourly2-GP2"]
-  }
-
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-
-  owners = ["981919213787"] # Canonical
-}
-
-#EBS Volume and Attachment
-
-resource "aws_ebs_volume" "example" {
-  availability_zone = "us-east-2a"
-  size              = 10
-}
-
-resource "aws_volume_attachment" "ebs_att" {
-  device_name = "/dev/sdh"
-  volume_id   = aws_ebs_volume.example.id
-  instance_id = aws_instance.example.id
-}
