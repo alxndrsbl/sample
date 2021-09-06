@@ -1,5 +1,6 @@
 provider "aws" {
     region = "us-east-2"
+}
 
 #AWS Instance
 resource "aws_instance" "example" {
